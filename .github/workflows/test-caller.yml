@@ -1,0 +1,11 @@
+name: Test Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: tessy-devops-lab/workflows/.github/workflows/test-reusable.yml@main
+
+    with:
+      message: "Hello from the application repository"
