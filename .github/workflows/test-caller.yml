@@ -9,3 +9,5 @@ jobs:
 
     with:
       message: "Hello from the application repository"
+      ecr_repository: github-actions-app  
+      
