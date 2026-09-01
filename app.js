@@ -1,7 +1,12 @@
-function greet(name) {
-  return `Hello ${name}!`;
-}
+const http = require("http");
 
-console.log(greet("Tessy"));
+const PORT = 3000;
 
-module.exports = { greet };
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello Tessy! GitHub Actions + Docker + ECR is working!\n");
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
