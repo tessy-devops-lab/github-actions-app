@@ -11,8 +11,8 @@ const server = http.createServer((req, res) => {
   res.end("Hello Tessy! GitHub Actions + Docker + ECR is working!\n");
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-module.exports = { greet };
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
