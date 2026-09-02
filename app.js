@@ -7,8 +7,7 @@ function greet(name) {
 }
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello Tessy! GitHub Actions + Docker + ECR deployment is working!\n");
+  res.destroy();
 });
 
 if (require.main === module) {
