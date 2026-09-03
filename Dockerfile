@@ -2,6 +2,8 @@ FROM node:22-alpine
 
 WORKDIR /app
 
+RUN apk update && apk upgrade
+
 COPY package*.json ./
 
 RUN npm install
