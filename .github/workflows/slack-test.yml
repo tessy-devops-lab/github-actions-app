@@ -1,0 +1,16 @@
+name: Slack Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  slack-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Send message to Slack
+        run: |
+          curl -X POST \
+            -H 'Content-type: application/json' \
+            --data '{"text":"✅ Hello from GitHub Actions! Slack integration is working!"}' \
+            "${{ secrets.SLACK_WEBHOOK_URL }}"
