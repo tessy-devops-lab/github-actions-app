@@ -7,7 +7,9 @@ function greet(name) {
 }
 
 const server = http.createServer((req, res) => {
-  res.destroy();
+  res.writeHead(200, { "Content-Type": "text/plain" });
+
+  res.end("Hello Tessy! Health check is working!\n");
 });
 
 if (require.main === module) {
